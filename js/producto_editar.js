@@ -10,7 +10,7 @@ nombre:"",
 imagen:"",
 stock:0,
 precio:0,
-url:'http://toccicristian.pythonanywhere.com/productos/'+id,
+url:'https://toccicristian.pythonanywhere.com/productos/'+id,
 }
 },
 methods: {
