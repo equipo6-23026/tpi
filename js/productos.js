@@ -5,7 +5,7 @@ return {
 productos:[],
 //url:'http://localhost:5000/productos',
 // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
-url:'https://toccicristian.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
+url:'https://equipo6.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
 error:false,
 cargando:true,
 /*atributos para el guardar los valores del formulario */
@@ -60,7 +60,7 @@ window.location.href = "../templates/productos.html";
 })
 .catch(err => {
 console.error(err);
-alert("Error al Grabarr")
+alert("Error al Grabar")
 })
 }
 },
