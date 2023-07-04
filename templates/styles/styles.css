@@ -42,14 +42,19 @@ a:active{
     animation: parpadeo 0.1s linear 3;
 }
 
-@keyframes parpadeo{
-    0% {background-color: var(--hover-color)}
-    50% {opacity: 0}
+.table{
+    color:var(--color-texto);
+    font-size: 1.5em;
 }
+
 
 .logotipo{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     height:3em;
+}
+
+.navbar-brand{
+    font-size: 2.5em;
 }
