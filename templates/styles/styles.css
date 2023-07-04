@@ -1,0 +1,60 @@
+:root{
+    --review-width:16em;
+    --color-texto:#FFFFFF;
+    --hover-color:#5599BB;
+    --color-fondo:#242530ff;
+}
+
+html{
+    box-sizing: border-box
+}
+
+body{
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: 'VT323', 'Roboto', sans-serif;
+    font-size:1em
+}
+
+header{padding: 2em 0 2em;
+    text-align: center;
+}
+
+h2{
+    padding-top:1.5em;
+}
+
+nav{
+    position:relative;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    font-size: 1.5em;
+    padding: 1.5em 0;
+    color: var(--hover-color)
+
+}
+
+a:active{
+    animation: parpadeo 0.1s linear 3;
+}
+
+.table{
+    color:var(--color-texto);
+    font-size: 1.5em;
+}
+
+
+.logotipo{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height:3em;
+}
+
+.navbar-brand{
+    font-size: 2.5em;
+}
