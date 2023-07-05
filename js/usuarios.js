@@ -11,9 +11,10 @@ createApp({
       /*atributos para el guardar los valores del formulario */
       id: 0,
       username: "",
-      avatar: "",
-      mail: "",
       password: "",
+      mail: "",
+      avatar: "",
+      rol_id:1,
     };
   },
   methods: {
@@ -46,6 +47,7 @@ createApp({
         password: this.password,
         mail: this.mail,
         avatar: this.avatar,
+        rol_id: this.rol_id
       };
       var options = {
         body: JSON.stringify(usuario),

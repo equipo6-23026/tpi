@@ -38,6 +38,7 @@
                                     <th scope="col">Contraseña</th>
                                     <th scope="col">Correo electronico</th>
                                     <th scope="col">Avatar</th>
+                                    <th scope="col">Rol</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -46,10 +47,14 @@
                                     <td scope="row">{{usuario.id}}</td>
                                     <td>{{usuario.username}}</td>
                                     <td>{{usuario.password}}</td>
+                                    
                                     <td>{{usuario.mail}}</td>
                                     <td>
                                         <img width="60" :src="usuario.avatar" :alt="usuario.username">
                                     </td>
+                                    <td>{{usuario.rol}}</td>
+                                    
+                                    
                                     <td>
                                         <a class="btn btn-primary"
                                             :href="'./usuario_update.html?id='+ usuario.id">Editar</a>
