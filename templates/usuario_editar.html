@@ -42,14 +42,14 @@
                 </div>
                 <div class="mb-3">
                     <label for="rol_id">Rol</label>
-                    <select name="rol_id" id="rol">
+                    <select name="rol_id" id="rol" v-model="rol_id">
                         <option value=1>Administrador</option>
                         <option value=2>Moderador</option>
                         <option value=3>Escritor Sarasa</option>
                         <option value=4>Usuario base</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-success" v-on:click="modificar()">Grabar</button>
+                <button type="button" class="btn btn-success" v-on:click="modificar()">Guardar</button>
             </form>
         </div>
     </main>
