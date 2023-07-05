@@ -35,13 +35,18 @@
           <label for="avatar">Avatar</label>
           <input type="text" name="avatar" id="avatar" v-model="avatar">
           <img width="100" :src="avatar" alt="">
-
         </div>
-
-        <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
+        <div class="mb-3">
+          <label for="rol_id">Rol</label>
+          <select name="rol_id" id="rol_id" v-model="rol_id">
+              <option value=1>Administrador</option>
+              <option value=2>Moderador</option>
+              <option value=3>Escritor Sarasa</option>
+              <option value=4>Usuario base</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-success" v-on:click="grabar()">Registrar</button>
       </form>
-
-
     </div>
 
 

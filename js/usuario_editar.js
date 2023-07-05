@@ -1,6 +1,7 @@
 console.log(location.search); // lee los argumentos pasados a este formulario
 var id = location.search.substr(4);
 console.log(id);
+console.log(rol_id)
 const { createApp } = Vue;
 createApp({
   data() {
@@ -10,6 +11,7 @@ createApp({
       avatar: "",
       mail: "",
       password: "",
+      rol_id:0,
       url: "https://equipo6.pythonanywhere.com/usuarios/" + id,
     };
   },
@@ -24,6 +26,7 @@ createApp({
           this.avatar = data.avatar;
           this.mail = data.mail;
           this.password = data.password;
+          this.rol_id= data.rol_id;
         })
         .catch((err) => {
           console.error(err);
@@ -31,12 +34,15 @@ createApp({
         });
     },
     modificar() {
+      
       let usuario = {
         username: this.username,
         password: this.password,
         mail: this.mail,
         avatar: this.avatar,
+        rol_id: this.rol_id
       };
+      console.log(usuario.rol_id)
       var options = {
         body: JSON.stringify(usuario),
         method: "PUT",
@@ -45,6 +51,7 @@ createApp({
       };
       fetch(this.url, options)
         .then(function () {
+          
           alert("Registro modificado");
           window.location.href = "../templates/usuarios.html";
         })
