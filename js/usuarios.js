@@ -2,18 +2,18 @@ const { createApp } = Vue
 createApp({
 data() {
 return {
-productos:[],
-//url:'http://localhost:5000/productos',
+usuarios:[],
+//url:'http://localhost:5000/usuarios',
 // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
 url:'https://equipo6.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
 error:false,
 cargando:true,
 /*atributos para el guardar los valores del formulario */
 id:0,
-nombre:"",
-imagen:"",
-stock:0,
-precio:0,
+username:"",
+avatar:"",
+mail:"",
+password:"",
 }
 },
 methods: {
@@ -21,18 +21,18 @@ fetchData(url) {
 fetch(url)
 .then(response => response.json())
 .then(data => {
-this.productos = data;
+this.usuarios = data;
 this.cargando=false
 })
 .catch(err => {
-console.error(err);
-this.error=true
+    console.error(err);
+    this.error=true
 })
 },
-eliminar(producto) {
-const url = this.url+'/' + producto;
-var options = {
-method: 'DELETE',
+eliminar(usuario) {
+    const url = this.url+'/' + usuario;
+    var options = {
+    method: 'DELETE',
 }
 fetch(url, options)
 .then(res => res.text()) // or res.json()
@@ -41,22 +41,22 @@ location.reload();
 })
 },
 grabar(){
-let producto = {
-nombre:this.nombre,
-precio: this.precio,
-stock: this.stock,
-imagen:this.imagen
+let usuario = {
+    username:this.username,
+    password: this.password,
+    mail: this.mail,
+    avatar:this.avatar
 }
 var options = {
-body:JSON.stringify(producto),
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-redirect: 'follow'
+    body:JSON.stringify(usuario),
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    redirect: 'follow'
 }
 fetch(this.url, options)
 .then(function () {
-alert("Registro grabado")
-window.location.href = "../templates/productos.html";
+    alert("Registro grabado")
+    window.location.href = "../templates/usuarios.html";
 })
 .catch(err => {
 console.error(err);

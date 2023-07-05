@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <title>SARASA CRUD - GESTION DE USUARIOS</title>
 <meta charset="utf-8">
@@ -17,7 +17,7 @@ crossorigin="anonymous">
 <div id="app" class="container">
 <h1>Usuarios</h1>
 <br>
-<a class="btn btn-primary" href="../templates/producto_nuevo.html">Nuevo</a>
+<a class="btn btn-primary" href="../templates/usuario_nuevo.html">Nuevo</a>
 <br><br>
 <div v-if="error">
 <p>Lo sentimos , ........</p>
@@ -33,25 +33,25 @@ crossorigin="anonymous">
 <thead>
 <tr>
 <th scope="col">Id</th>
-<th scope="col">Cuenta</th>
-<th scope="col">Precio-Pass md5?</th>
-<th scope="col">Stock-mail?</th>
+<th scope="col">Usuario</th>
+<th scope="col">Contraseña</th>
+<th scope="col">Correo electronico</th>
 <th scope="col">Avatar</th>
 <th scope="col">Acciones</th>
 </tr>
 </thead>
 <tbody>
-<tr class="" v-for="producto in productos">
-<td scope="row">{{producto.id}}</td>
-<td>{{producto.nombre}}</td>
-<td>{{producto.precio}}</td>
-<td>{{producto.stock}}</td>
+<tr class="" v-for="usuario in usuarios">
+<td scope="row">{{usuario.id}}</td>
+<td>{{usuario.username}}</td>
+<td>{{usuario.password}}</td>
+<td>{{usuario.mail}}</td>
 <td>
-<img width="60" :src="producto.imagen" :alt="producto.nombre">
+<img width="60" :src="usuario.avatar" :alt="usuario.username">
 </td>
 <td>
-<a class="btn btn-primary" :href="'./producto_update.html?id='+ producto.id" >Editar</a>
-<button type="button" class="btn btn-danger" v-on:click="eliminar(producto.id)" >Eliminar</button>
+<a class="btn btn-primary" :href="'./usuario_update.html?id='+ usuario.id" >Editar</a>
+<button type="button" class="btn btn-danger" v-on:click="eliminar(usuario.id)" >Eliminar</button>
 </td>
 </tr>
 </tbody>
@@ -74,6 +74,6 @@ integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6
 crossorigin="anonymous"></script>
 <script src="../js/main.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
-<script src="../js/productos.js"></script>
+<script src="../js/usuarios.js"></script>
 </body>
 </html>

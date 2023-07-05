@@ -6,7 +6,7 @@ document.getElementById("header").innerHTML=`
 <link rel="stylesheet" href="styles/styles.css">
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
 <div class="container">
-<a class="navbar-brand" href="../templates/productos.html">SARASA CRUD</a>
+<a class="navbar-brand" href="../templates/usuarios.html">SARASA CRUD</a>
 
 </div>
 </nav>`

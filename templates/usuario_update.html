@@ -1,7 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
-<title>Producto Nuevo</title>
+<title>Usuario Nuevo</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Bootstrap CSS v5.2.1 -->
@@ -16,28 +16,28 @@ integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+f
 <main>
 <div class="container" id="app">
 <form style="background-color: aliceblue;margin:10px auto ; width: 400px; padding: 20px;">
-<h2>Editar Producto </h2>
-<p>Precio:{{precio}}</p>
+<h2>Editar Usuario </h2>
+<p>Username:{{username}}</p>
 <div class="mb-3">
 <label for="id">Id</label>
 <input type="number" name="id" id="id" disabled v-model="id" >
 </div>
 <div class="mb-3">
-<label for="nombre">Nombre</label>
+<label for="nombre">Username</label>
 <input type="text" name="nombre" id="nombre" v-model="nombre">
 </div>
 <div class="mb-3">
-<label for="precio">Precio</label>
-<input type="number" name="precio" id="precio" v-model="precio">
+<label for="password">Contraseña</label>
+<input type="text" name="password" id="password" v-model="password">
 </div>
 <div class="mb-3">
-<label for="stock">Stock</label>
-<input type="number" name="stock" id="stock" v-model="stock">
+<label for="mail">Correo electronico</label>
+<input type="email" name="mail" id="mail" v-model="mail">
 </div>
 <div class="mb-3">
-<label for="imagen">Imagen</label>
-<input type="text" name="imagen" id="imagen" v-model="imagen">
-<img width="100" :src="imagen" alt="">
+<label for="avatar">Avatar</label>
+<input type="text" name="avatar" id="avatar" v-model="avatar">
+<img width="100" :src="avatar" alt="">
 </div>
 <button type="button" class="btn btn-success" v-on:click="modificar()">Grabar</button>
 </form>
@@ -55,6 +55,6 @@ integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6
 crossorigin="anonymous"> </script>
 <script src="../js/main.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="../js/producto_editar.js"></script>
+<script src="../js/usuario_editar.js"></script>
 </body>
 </html>
