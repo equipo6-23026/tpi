@@ -8,6 +8,7 @@ createApp({
       url: "https://equipo6.pythonanywhere.com/usuarios", // si ya lo subieron a pythonanywhere
       error: false,
       cargando: true,
+      novalido:false,
       /*atributos para el guardar los valores del formulario */
       id: 0,
       username: "",
@@ -17,7 +18,8 @@ createApp({
       rol_id:1,
     };
   },
-  methods: {
+  methods: 
+  {
     fetchData(url) {
       fetch(url)
         .then((response) => response.json())
@@ -30,6 +32,7 @@ createApp({
           this.error = true;
         });
     },
+    
     eliminar(usuario) {
       const url = this.url + "/" + usuario;
       var options = {
@@ -55,6 +58,7 @@ createApp({
         headers: { "Content-Type": "application/json" },
         redirect: "follow",
       };
+      
       fetch(this.url, options)
         .then(function () {
           alert("Registro grabado");
@@ -65,8 +69,29 @@ createApp({
           alert("Error al Grabar");
         });
     },
+    validar() {
+      let condition=false;
+      if (/^[a-z0-9][a-z0-9_]{4,20}$/.test(this.username)){
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.mail)){
+          if(/^(https?:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?)\.(jpeg|jpg|png|gif|bmp|svg)$/i.test(this.avatar)){
+            if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.password)){
+              condition=true;
+              this.novalido=false;
+            };
+            
+          };
+        };
+      };
+        
+      if (condition){
+        this.grabar();
+      } else {
+        this.novalido=true;
+      }
+    },
   },
   created() {
     this.fetchData(this.url);
   },
+
 }).mount("#app");
