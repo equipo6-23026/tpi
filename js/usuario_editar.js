@@ -25,7 +25,7 @@ createApp({
           this.username = data.username;
           this.avatar = data.avatar;
           this.mail = data.mail;
-          this.password = data.password;
+          this.password = "";
           this.rol_id= data.rol_id;
         })
         .catch((err) => {
