@@ -26,19 +26,16 @@
                     <input type="number" name="id" id="id" disabled v-model="id">
                 </div>
                 <div class="mb-3">
-                    <label for="username">Username</label>
+                    <label for="username">Username: (entre 5 y 20 caracteres alfanumericos, permitido guion bajo)</label>
                     <input type="text" name="username" id="username" v-model="username">
                 </div>
-                <div class="mb-3">
-                    <label for="password">Contraseña</label>
-                    <input type="text" name="password" id="password" v-model="password">
-                </div>
+                
                 <div class="mb-3">
                     <label for="mail">Correo electronico</label>
                     <input type="email" name="mail" id="mail" v-model="mail">
                 </div>
                 <div class="mb-3">
-                    <label for="avatar">Avatar</label>
+                    <label for="avatar">Avatar: (url de imagen, formatos aceptados: jpeg|jpg|png|gif|bmp|svg)</label>
                     <input type="text" name="avatar" id="avatar" v-model="avatar">
                     <img width="100" :src="avatar" alt="">
                 </div>
@@ -51,7 +48,10 @@
                         <option value=4>Usuario base</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-success" v-on:click="modificar()">Grabar</button>
+                <div v-if="novalido">
+                    <p style="color: red;">Parametros invalidos, por favor revisar</p>
+                </div>
+                <button type="button" class="btn btn-success" v-on:click="validar()">Grabar</button>
             </form>
         </div>
     </main>

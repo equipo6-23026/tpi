@@ -11,6 +11,7 @@ createApp({
       avatar: "",
       mail: "",
       password: "",
+      novalido:false,
       rol_id:0,
       url: "https://equipo6.pythonanywhere.com/usuarios/" + id,
     };
@@ -25,7 +26,6 @@ createApp({
           this.username = data.username;
           this.avatar = data.avatar;
           this.mail = data.mail;
-          this.password = "";
           this.rol_id= data.rol_id;
         })
         .catch((err) => {
@@ -34,15 +34,13 @@ createApp({
         });
     },
     modificar() {
-      
       let usuario = {
         username: this.username,
-        password: this.password,
         mail: this.mail,
         avatar: this.avatar,
         rol_id: this.rol_id
       };
-      console.log(usuario.rol_id)
+      console.log({usuario})
       var options = {
         body: JSON.stringify(usuario),
         method: "PUT",
@@ -60,7 +58,25 @@ createApp({
           alert("Error al Modificar");
         });
     },
+    validar() {
+      let condition=false;
+        if (/^[a-z0-9][a-z0-9_]{4,20}$/.test(this.username)){
+          if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.mail)){
+            if(/^(https?:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?)\.(jpeg|jpg|png|gif|bmp|svg)$/i.test(this.avatar)){
+              condition=true;
+              this.novalido=false;
+            };
+          };
+        };
+        
+      if (condition){
+        this.modificar();
+      } else {
+        this.novalido=true;
+      };
+    },
   },
+  
   created() {
     this.fetchData(this.url);
   },
