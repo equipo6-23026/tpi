@@ -11,6 +11,7 @@ createApp({
       avatar: "",
       mail: "",
       password: "",
+      password_backup:"",
       novalido:false,
       rol_id:0,
       url: "https://equipo6.pythonanywhere.com/usuarios/" + id,
@@ -26,6 +27,7 @@ createApp({
           this.username = data.username;
           this.avatar = data.avatar;
           this.mail = data.mail;
+          this.password_backup = data.password;
           this.rol_id= data.rol_id;
         })
         .catch((err) => {
@@ -40,7 +42,10 @@ createApp({
         avatar: this.avatar,
         rol_id: this.rol_id
       };
-      console.log({usuario})
+      if (this.password.length>0){
+        usuario['password']=this.password;
+      } 
+      console.log(usuario);
       var options = {
         body: JSON.stringify(usuario),
         method: "PUT",
@@ -63,8 +68,10 @@ createApp({
         if (/^[a-z0-9][a-z0-9_]{4,20}$/.test(this.username)){
           if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.mail)){
             if(/^(https?:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?)\.(jpeg|jpg|png|gif|bmp|svg)$/i.test(this.avatar)){
-              condition=true;
-              this.novalido=false;
+              if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(this.password)|this.password.length===0){
+                condition=true;
+                this.novalido=false;
+              };
             };
           };
         };
