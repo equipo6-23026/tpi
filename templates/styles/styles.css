@@ -21,7 +21,7 @@ header{padding: 2em 0 2em;
 }
 
 h2{
-    padding-top:1.5em;
+    padding-top:1.5em;  
 }
 
 nav{
@@ -42,11 +42,12 @@ a:active{
     animation: parpadeo 0.1s linear 3;
 }
 
-.table{
-    color:var(--color-texto);
-    font-size: 1.5em;
+form div label{
+    padding-top: .5em;
+    font-size: 1.2em;
+    display:inline-block;
+    width: 45%;
 }
-
 
 .logotipo{
     box-sizing: border-box;
@@ -55,6 +56,32 @@ a:active{
     height:3em;
 }
 
+.userform-input{
+    width:55%;
+}
+
+.aclaracion{
+    display: block;
+    font-size: 1em;
+    width:90%;
+}
+
+.table{
+    color:var(--color-texto);
+    font-size: 1.1em;
+}
+
 .navbar-brand{
     font-size: 2.5em;
+}
+
+.titulo-update, .titulo-alta{
+    padding-top:.5em;
+    font-size: 1.7em;
+}
+
+.img-avatar{
+    display: blocK;
+    margin-left:50%;
+    margin-top:1.5em;
 }
